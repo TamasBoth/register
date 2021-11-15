@@ -1,0 +1,45 @@
+class App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(title: "SImple ", home: TasksPage());
+  }
+}
+
+class TasksPage extends StatelessWidget {
+
+  final _controller = TextEditingController();
+  void _saveTask() {
+    final taskName = _controller.text;
+    Firebase
+
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: Text("Task")),
+        body: Column(children: [
+          Row(
+            children: [
+              Expanded(
+                  child: TextField(
+                controller: _controller,
+                decoration: InputDecoration(
+                  hintText: "email"
+                )
+              )),
+
+
+              FlatButton(
+                child: Text("Save"),
+                color: Colors.green,
+                onPressed: () {
+                    _saveTask();
+                },
+              )
+            ],
+          )
+        ]));
+  }
+}
